@@ -16,11 +16,11 @@ function Navbar() {
         <>
            <nav className="navbar">
                <div className="navbar-container">
-                   <Link to='/' className='navbar-logo'>
+                   <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                        <MarkerIcon />HISTORICAL MAPS
                    </Link>
                    <div className="menu-icon" onClick={handleClick}>
-                        {click ? <CloseIcon /> : <MenuIcon />}
+                        {click ? <CloseIcon style={{ fontSize: 35 }} /> : <MenuIcon style={{ fontSize: 35 }} />}
                    </div>
                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className="nav-item">

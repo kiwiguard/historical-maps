@@ -1,8 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DataFetcher from './services/DataFetcher';
-import StartPage from './components/StartPage';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Search from './components/pages/Search';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -10,11 +12,12 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" exact />
+          <Route path="/" exact component={Home}/>
+          <Route path="/search" exact component={Search}/>
+          <Route path="/about" exact component={About}/>
         </Switch>
+        <Footer />
       </Router>
-      <StartPage />
-      <DataFetcher />
     </div>
   );
 }

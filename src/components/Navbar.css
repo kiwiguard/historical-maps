@@ -71,6 +71,10 @@
   .menu-icon {
     display: none;
   }
+
+  .sign-in {
+    color: #fff;
+  }
   
   @media screen and (max-width: 960px) {
     .NavbarItems {
@@ -80,11 +84,12 @@
     .nav-menu {
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
       width: 100vw;
       height: 90vh;
       position: absolute;
       top: 80px;
-      left: -110%;
+      left: -200%;
       opacity: 1;
       transition: all 0.5s ease;
     }
@@ -154,4 +159,5 @@
       color: #242424;
       transition: 250ms;
     }
+
   }

@@ -1,0 +1,62 @@
+.footer-container {
+    background-color: #272727;
+    bottom: 0;
+}
+
+.footer-wrapper {
+    padding: 3rem 0 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    justify-content: left;
+}
+
+.footer-logo {
+    margin-top: 3rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-info h4{
+    color: #E2B13C;
+    line-height: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.footer-info p {
+    color: #C2C2C2;
+}
+
+.footer-info--socials {
+    color: #E2B13C;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.footer-info--socials > .MuiSvgIcon-root {
+    width: 35px;
+    height: 35px;
+}
+
+.footer-info--nav a{
+    display: block;
+    color: #C2C2C2;
+    text-align: center !important;
+    text-decoration: none;
+}
+
+.footer-info a:hover{
+    color: #E2B13C;
+    transition: 0.3s ease-out;
+}
+
+.footer-info a:visited{
+    color: #C2C2C2;
+}
