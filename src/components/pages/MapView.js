@@ -18,6 +18,11 @@ function MapView () {
                 </div>
             </section>
             <div className='map-div'>
+
+                <div id="mapid">
+
+                </div>
+
                 <div className='map-div--image-container'>
                     <img src={startMap} alt={'map'} className='map-image' useMap='#image-map' />
                     
