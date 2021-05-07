@@ -1,5 +1,5 @@
 import '../../App.css';
-import startMap from '../../images/startMap.jpg';
+// import startMap from '../../images/startMap.jpg';
 import SimilarItems from '../SimilarItems';
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
@@ -23,8 +23,8 @@ function MapView () {
             <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true} className='mapid'>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    url={startMap}
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    // url={startMap}
                 />
                 <Marker position={[51.505, -0.09]}>
                     <Popup>
