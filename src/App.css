@@ -95,6 +95,9 @@ map-div--image-container {
   width: 100%;
 }
 
+.mapid { 
+  height: 80vh; 
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
