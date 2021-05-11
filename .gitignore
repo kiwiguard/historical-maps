@@ -11,6 +11,10 @@
 # production
 /build
 
+# map-images
+/public/maps
+/src/maps
+
 # misc
 .DS_Store
 .env.local

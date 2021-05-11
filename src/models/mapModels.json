@@ -1,7 +1,7 @@
 [
     {
         "id" : "1",
-     "path" : "../../maps/europe/{z}/{x}/{y}.jpg",
+     "path" : "../../maps/1651-1724_Material_cartográfico__34/{z}/{x}/{y}.jpg",
      "name" : "Europe",
      "startDate" : "1651",
      "endDate" : "1724",
@@ -13,7 +13,7 @@
     },
     {
         "id" : "2",
-        "path" : "",
+        "path" : "../../maps/1813_HanöBugten_Klint/{z}/{x}/{y}.jpg",
         "name" : "Hanö Bay",
         "startDate" : "1813",
         "endDate" : "",
@@ -25,7 +25,7 @@
     },
     {
         "id" : "3",
-        "path" : "",
+        "path" : "../../maps/1700_Baltic_GVKeulen/{z}/{x}/{y}.jpg",
         "name" : "Baltic Sea",
         "startDate" : "1700",
         "endDate" : "1723",
