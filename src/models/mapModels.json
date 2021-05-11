@@ -1,13 +1,13 @@
 [
     {
         "id" : "1",
-     "path" : "../../maps/scandinavia/{z}/{x}/{y}.jpg",
-     "name" : "Scandinavien",
+     "path" : "../../maps/europe/{z}/{x}/{y}.jpg",
+     "name" : "Europe",
      "startDate" : "1651",
      "endDate" : "1724",
-     "area" : "Scandinavia",
-     "maker" : "",
-     "description" : "Karta över skandinavien",
+     "area" : "Europe",
+     "maker" : "Unknown",
+     "description" : "Karta över Europa",
      "link" : "http://bdh.bne.es/bnesearch/detalle/bdh0000000986",
      "clickType" : "OpenCard"
     },

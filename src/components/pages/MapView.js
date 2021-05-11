@@ -9,7 +9,7 @@ function RenderMapModel () {
     return (mapList.map((e,i) => {   
             return (
             <>
-                <section key={i}className='map-header'>
+                <section key={i} className='map-header'>
                 <Link to='/search'>
                     <button className='primary-btn'>Back to Search</button>
                 </Link>
@@ -24,10 +24,18 @@ function RenderMapModel () {
                         <TileLayer
                             url={e.path}
                             noWrap='true'
+                            minZoom='2'
+                            maxZoom='4'
+                            continuousWorld='false'
                         />
                         <Marker position={[51.505, -0.09]}>
                             <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
+                            Scandinavia.
+                            </Popup>
+                        </Marker>
+                        <Marker position={[20, -45 ]}>
+                            <Popup>
+                            British Islands.
                             </Popup>
                         </Marker>
                     </MapContainer>

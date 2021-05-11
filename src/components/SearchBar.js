@@ -1,6 +1,6 @@
 import SearchIcon from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
-import './Search.css';
+import './SearchBar.css';
 
 
 

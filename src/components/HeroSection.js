@@ -1,7 +1,7 @@
 import './HeroSection.css';
 import '../App.css';
 import heroBackground from '../images/hero-img.jpg';
-import Search from './Search';
+import SearchBar from './SearchBar';
 import { useState } from 'react';
 
 // const maps = [
@@ -31,7 +31,7 @@ function HeroSection() {
     return (
         <div className='hero-container'
         style={{backgroundImage: `url(${heroBackground})`}}>
-            <Search
+            <SearchBar
                 className='hero-search-bar' 
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
