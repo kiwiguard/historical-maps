@@ -94,6 +94,7 @@ ul  {
   display: flex;
   justify-content: space-between;
 }
+
 .filter-div--header p {
   margin: 0;
 }
