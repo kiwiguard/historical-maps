@@ -69,6 +69,11 @@ ul  {
   margin-inline-end: 0px;
 }
 
+.leaflet-container {
+  width: 60vw; 
+  height: 100vh;
+}
+
 .map-header {
   text-align: left;
   margin-top: 10vh;

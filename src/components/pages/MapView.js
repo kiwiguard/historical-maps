@@ -1,38 +1,50 @@
 import '../../App.css';
-// import startMap from '../../images/startMap.jpg';
 import SimilarItems from '../SimilarItems';
 import { Link } from 'react-router-dom';
+import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
+function RenderMapModel () {
+    let mapList = mapModels
+    return (mapList.map((e,i) => {   
+            return (
+            <>
+                <section key={i}className='map-header'>
+                <Link to='/search'>
+                    <button className='primary-btn'>Back to Search</button>
+                </Link>
+                    <h1 className='libre'>Map of {e.name}</h1>
+                    <div className='map-header--info'>
+                        <h4><b>Created by: </b>{e.maker}</h4>
+                        <h4><b>Date (ca): </b>{e.startDate} - {e.endDate}</h4>
+                    </div>
+                </section>
+                <div className='map-div'>
+                    <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={true} className='mapid'>
+                        <TileLayer
+                            url={e.path}
+                            noWrap='true'
+                        />
+                        <Marker position={[51.505, -0.09]}>
+                            <Popup>
+                            A pretty CSS3 popup. <br /> Easily customizable.
+                            </Popup>
+                        </Marker>
+                    </MapContainer>
+                </div>
+            </>
+            )
+        }))
+}
+
 function MapView () {
+    // const mapPath = "../../maps/scandinavia/{z}/{x}/{y}.jpg"
+    console.log(mapModels)
     return (
     <>
         <div className='wrapper'>
-            <section className='map-header'>
-            <Link to='/search'>
-                <button className='primary-btn'>Back to Search</button>
-            </Link>
-                <h1 className='libre'>Map of Europe</h1>
-                <div className='map-header--info'>
-                    <h4><b>Created by: </b>Unknown</h4>
-                    <h4><b>Date (ca): </b>1651 - 1724</h4>
-                </div>
-            </section>
-            <div className='map-div'>
 
-            <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true} className='mapid'>
-                <TileLayer
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    // url={startMap}
-                />
-                <Marker position={[51.505, -0.09]}>
-                    <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                </Marker>
-            </MapContainer>
-
+            <RenderMapModel/>
                 {/* <div className='map-div--image-container'>
                     <img src={startMap} alt={'map'} className='map-image' useMap='#image-map' />
                     
@@ -41,7 +53,6 @@ function MapView () {
                         <area target="_self" alt="Scandinavia" title="Scandinavia" href="http://localhost:3000/mapView3" coords="1536,113,2506,882" shape="rect" />
                     </map>
                 </div> */}
-            </div> 
         </div>
         <SimilarItems />
     </>
