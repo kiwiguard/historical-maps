@@ -2,53 +2,51 @@ import '../../App.css';
 import mapModels from '../../models/mapModels.json';
 import SearchBar from '../SearchBar';
 import { useState, useEffect } from 'react';
-import renderMapItem from './MapView';
+import { RenderMapItem } from './MapView';
 import RangeSlider from '../RangeSlider';
+import Cards from '../Cards';
 
-function DropDownMenu ({propertyName}) {
-    let mapList = mapModels;
+function DropDownMenu({propertyName}){   
+    let mapList = mapModels;    
     let mapViewItem;
-    const [searchResult, setSearchResults] = useState([]);
-    const [isDone, setIsDone] = useState(false);
+    const [searchResults, setSearchResults] = useState([]);
+    const [isDone,setIsDone] = useState(false);
     const [selectedMap, setSelectedMap] = useState({});
-    const [searchTerm, setSearchTerm] = useState("");
-
+    const [searchTerm, setSearchTerm] = useState("");    
     const handleChange = event => {
         setSearchTerm(event.target.value);
     };
-
-    useEffect(() => {
+    
+     useEffect(() => {
         const results = mapList.filter(item =>
             item[propertyName].includes(searchTerm)
         );
         console.log(results);
         setSearchResults(results);
-    }, [searchTerm]);
+      }, [searchTerm]);
 
     const showData = () => {
-        setSelectedMap(searchResult[0]);
+        setSelectedMap(searchResults[0]);
         setIsDone(true);
     }
-
     if (isDone) {
-        mapViewItem = renderMapItem(selectedMap)
-    } else {
+        mapViewItem = RenderMapItem(selectedMap)
+      } else {
         mapViewItem = '';
     }
-
     return (
-    <>
-        <label htmlFor='filterAreas' className='filter-label'>Location</label><br/>
-        <select name='filterAreas' id='filterAreas' onChange={handleChange}>
+        <div>
+            <h1>{propertyName}</h1>
+        <select onChange={handleChange}>
             {mapList.map((item, index) => {
-            return (
-                <option key={index} value={item[propertyName]}> {item[propertyName]} </option>
-            )
+                return (
+                    <option key={index} value={item[propertyName]}> {item[propertyName]} </option>
+                )
             })}
         </select>
-        <button onClick={showData}>Show Map</button>
+        <button onClick={showData} >Show Map</button>                    
             {mapViewItem}
-    </>
+        </div>
     )
 }
 
@@ -110,8 +108,8 @@ function Search () {
                         setSearchQuery={setSearchQuery}
                     />
                 </div>
-                <div className='card-container'>
-
+                <div className='result-container'>
+                    <Cards />
                 </div>
             </div>
         </div>

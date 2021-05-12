@@ -154,7 +154,9 @@ input[type='checkbox'] {
   align-self: center;
 }
 
-.card-container {
+.result-container {
+  min-height: 900px;
+  background-color: #ffffff;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
