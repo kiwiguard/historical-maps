@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-function RenderMapModel () {
-    let mapList = mapModels
+export function RenderMapModel (mapList) {    
     return (mapList.map((e,i) => {   
             return (
             <>

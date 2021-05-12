@@ -34,5 +34,17 @@
         "description" : "Karta över baltic sea",
         "link" : "https://en.wikipedia.org/wiki/Johannes_van_Keulen",
         "clickType" : "OpenCard"
+    },
+    {
+        "id" : "4",
+        "path" : "../../maps/1700_Baltic_GVKeulen/{z}/{x}/{y}.jpg",
+        "name" : "Baltic Sea",
+        "startDate" : "1700",
+        "endDate" : "1723",
+        "area" : "Baltic Sea",
+        "maker" : "Gerart van Keulen",
+        "description" : "Karta över baltic sea",
+        "link" : "https://en.wikipedia.org/wiki/Johannes_van_Keulen",
+        "clickType" : "OpenCard"
     }
 ]
