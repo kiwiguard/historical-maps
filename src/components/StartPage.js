@@ -38,14 +38,6 @@ function StartPage() {
 
         return item
     }
-
-        // Original <-- don't really need?
-        // useEffect(() => {
-        //     const getTest = async () => {
-        //         fetchTasks()
-        //     }
-        // getTest()
-        // }, [])
     
     
     return (
@@ -53,7 +45,6 @@ function StartPage() {
             <button onClick={() => fetchTasks('random')}>Slumpa Wiki</button><br />
 
             {loading ? ('Laddar....') : renderWiki(item)}
-
         </div>
     )
 }

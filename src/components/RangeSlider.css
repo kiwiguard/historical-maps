@@ -1,0 +1,19 @@
+.slider-div {
+    margin-top: 2rem;
+}
+
+.slider-label {
+    display: block;
+    float: left;
+    font-weight: 500;
+}
+
+.value {
+    display: flex;
+    justify-content:space-between;
+    padding-top: 1rem;
+}
+
+.value p {
+    margin: 0;
+}

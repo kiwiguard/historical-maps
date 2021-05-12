@@ -4,24 +4,25 @@ import { Link } from 'react-router-dom';
 import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-function RenderMapItem (currentMap) {
-    let item = currentMap
-    return (
+function RenderMapModel () {
+    let mapList = mapModels
+    return (mapList.map((e,i) => {   
+            return (
             <>
-                <section className='map-header'>
+                <section key={i} className='map-header'>
                 <Link to='/search'>
                     <button className='primary-btn'>Back to Search</button>
                 </Link>
-                    <h1 className='libre'>Map of {item.name}</h1>
+                    <h1 className='libre'>Map of {e.name}</h1>
                     <div className='map-header--info'>
-                        <h4><b>Created by: </b>{item.maker}</h4>
-                        <h4><b>Date (ca): </b>{item.startDate} - {item.endDate}</h4>
+                        <h4><b>Created by: </b>{e.maker}</h4>
+                        <h4><b>Date (ca): </b>{e.startDate} - {e.endDate}</h4>
                     </div>
                 </section>
                 <div className='map-div'>
                     <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={true} className='mapid'>
                         <TileLayer
-                            url={item.path}
+                            url={e.path}
                             noWrap='true'
                             minZoom='2'
                             maxZoom='4'
@@ -41,6 +42,7 @@ function RenderMapItem (currentMap) {
                 </div>
             </>
             )
+        }))
 }
 
 function MapView () {
@@ -50,7 +52,7 @@ function MapView () {
     <>
         <div className='wrapper'>
 
-            <RenderMapItem/>
+            <RenderMapModel/>
                 {/* <div className='map-div--image-container'>
                     <img src={startMap} alt={'map'} className='map-image' useMap='#image-map' />
                     

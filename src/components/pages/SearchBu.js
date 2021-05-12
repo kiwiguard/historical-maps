@@ -1,39 +1,15 @@
 import '../../App.css';
 import mapModels from '../../models/mapModels.json';
 import SearchBar from '../SearchBar';
-import { useState, useEffect } from 'react';
-import renderMapItem from './MapView';
-import RangeSlider from '../RangeSlider';
+import { useState } from 'react';
 
-function DropDownMenu ({propertyName}) {
-    let mapList = mapModels;
-    let mapViewItem;
-    const [searchResult, setSearchResults] = useState([]);
-    const [isDone, setIsDone] = useState(false);
-    const [selectedMap, setSelectedMap] = useState({});
-    const [searchTerm, setSearchTerm] = useState("");
-
-    const handleChange = event => {
-        setSearchTerm(event.target.value);
-    };
-
-    useEffect(() => {
-        const results = mapList.filter(item =>
-            item[propertyName].includes(searchTerm)
-        );
-        console.log(results);
-        setSearchResults(results);
-    }, [searchTerm]);
-
-    const showData = () => {
-        setSelectedMap(searchResult[0]);
-        setIsDone(true);
-    }
-
-    if (isDone) {
-        mapViewItem = renderMapItem(selectedMap)
-    } else {
-        mapViewItem = '';
+function DropDownMenuLocations () {
+    let mapList = mapModels
+    const handleChange = (e) => {
+        mapList.filter(item => item.area.includes(e.target.value)).map((currentMap, i) => {
+            console.log(currentMap.id);
+            return currentMap
+        })
     }
 
     return (
@@ -42,17 +18,15 @@ function DropDownMenu ({propertyName}) {
         <select name='filterAreas' id='filterAreas' onChange={handleChange}>
             {mapList.map((item, index) => {
             return (
-                <option key={index} value={item[propertyName]}> {item[propertyName]} </option>
+                <option key={index} value={item.area}> {item.area} </option>
             )
             })}
         </select>
-        <button onClick={showData}>Show Map</button>
-            {mapViewItem}
     </>
     )
 }
 
-function CheckboxMenuMaker () {
+function DropDownMenuMaker () {
     let mapList = mapModels
     const handleChange = (e) => {
         mapList.filter(item => item.maker.includes(e.target.value)).map((currentMap, i) => {
@@ -93,9 +67,8 @@ function Search () {
                         <p>CLEAR ALL</p>
                     </div>
                     <div className='filter-div--options'>
-                        <DropDownMenu propertyName='area'/>
-                        <CheckboxMenuMaker/>
-                        <RangeSlider />
+                        <DropDownMenuLocations/>
+                        <DropDownMenuMaker/>
                         <div className='filter-div--community-options'>
                             <div className='checkbox-option'>
                                 <label htmlFor='community-annotations' className='filter-checkbox-community-label'>Community Annotations</label><br/>
