@@ -2,9 +2,9 @@ import '../../App.css';
 import mapModels from '../../models/mapModels.json';
 import SearchBar from '../SearchBar';
 import { useState, useEffect } from 'react';
-import { RenderMapModel } from './MapView';
+// import { RenderMapModel } from './MapView';
+import { Cards } from '../Cards';
 import RangeSlider from '../RangeSlider';
-import Cards from '../Cards';
 
 
 function Search() {
@@ -30,6 +30,7 @@ function Search() {
         };
 
         const uniqueItems = [];
+        // eslint-disable-next-line
         mapList.map(item => {
             var existingItem = uniqueItems.find(x => x.area === item.area)
             if (!existingItem)
@@ -42,7 +43,8 @@ function Search() {
         }
 
         if (isDone) {            
-            mapViewItemList = RenderMapModel(searchResults)
+            // mapViewItemList = RenderMapModel(searchResults)
+            mapViewItemList = Cards(searchResults)
         } else {            
             mapViewItemList = '';
         }
@@ -73,6 +75,7 @@ function Search() {
         }
 
         const uniqueItems = [];
+        // eslint-disable-next-line
         mapList.map(item => {
             var existingItem = uniqueItems.find(x => x.maker === item.maker)
             if (!existingItem)
@@ -99,10 +102,6 @@ function Search() {
     const query = new URLSearchParams(search).get('search-bar');
     const [searchQuery, setSearchQuery] = useState(query || '');
 
-
-
-    // let areaList = mapList.map((e,i) => { return e.area })
-    // console.log(areaList)
     return (
         <>
             <div className='wrapper'>
@@ -131,7 +130,6 @@ function Search() {
                         />
                     </div>
                     <div className='result-container'>
-                        <Cards />
                         {mapViewItemList}
                     </div>
                 </div>

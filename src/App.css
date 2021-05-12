@@ -21,6 +21,7 @@ h4 {
 .wrapper {
   max-width: 1080px;
   margin: 0 auto;
+  height: fit-content;
 }
 
 .search {
@@ -74,12 +75,13 @@ ul  {
 }
 
 .search-container {
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 140px auto;
   gap: 20px;
-  margin: 140px 0 240px 0;
+  margin: 120px 0 220px 0;
 }
 
 .filter-div {
@@ -155,10 +157,17 @@ input[type='checkbox'] {
 }
 
 .result-container {
-  min-height: 900px;
+  min-height: 100%;
   background-color: #ffffff;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2rem 0;
+  justify-content: space-evenly;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .leaflet-container {

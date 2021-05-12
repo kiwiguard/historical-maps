@@ -83,7 +83,7 @@ export const RenderMapItem = (currentMap) =>{
     )
 }
 
-function MapView () {
+export function MapView () {
     // const mapPath = "../../maps/scandinavia/{z}/{x}/{y}.jpg"
     console.log(mapModels)
     return (
