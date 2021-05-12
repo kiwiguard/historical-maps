@@ -2,9 +2,9 @@ import '../../App.css';
 import mapModels from '../../models/mapModels.json';
 import SearchBar from '../SearchBar';
 import { useState, useEffect } from 'react';
-// import { RenderMapModel } from './MapView';
 import { Cards } from '../Cards';
 import RangeSlider from '../RangeSlider';
+import { Checkbox , FormControlLabel } from '@material-ui/core';
 
 
 function Search() {
@@ -43,7 +43,6 @@ function Search() {
         }
 
         if (isDone) {            
-            // mapViewItemList = RenderMapModel(searchResults)
             mapViewItemList = Cards(searchResults)
         } else {            
             mapViewItemList = '';
@@ -59,7 +58,7 @@ function Search() {
                         )
                     })}
                 </select>
-                <button onClick={showData} >Show Map</button>
+                <button onClick={showData}>Show Map</button>
 
             </div>
         )
@@ -88,8 +87,17 @@ function Search() {
                 {uniqueItems.map((item, index) => {
                     return (
                         <div className='checkbox-option' key={index}>
-                            <label htmlFor={item.maker} className='filter-checkbox-label'>{item.maker}</label><br />
-                            <input type='checkbox' value={item.maker} name={item.maker} onChange={handleChange} />
+                            <FormControlLabel
+                                className='filter-checkbox-label'
+                                value={item.maker}
+                                control={<Checkbox 
+                                    value={item.maker}
+                                    name={item.maker}
+                                    onChange={handleChange}
+                                />}
+                                label={item.maker}
+                                labelPlacement="start"
+                            />
                         </div>
                     )
                 })}
@@ -117,8 +125,18 @@ function Search() {
                             <RangeSlider />
                             <div className='filter-div--community-options'>
                                 <div className='checkbox-option'>
-                                    <label htmlFor='community-annotations' className='filter-checkbox-community-label'>Community Annotations</label><br />
-                                    <input type='checkbox' value='community-annotations' name='community-annotations' />
+                                    {/* <label htmlFor='community-annotations' className='filter-checkbox-community-label'>Community Annotations</label><br />
+                                    <input type='checkbox' value='community-annotations' name='community-annotations' /> */}
+                                    <FormControlLabel
+                                        className='filter-checkbox-community-label'
+                                        value='community-annotations'
+                                        control={<Checkbox 
+                                            value='community-annotations'
+                                            name='community-annotations'
+                                        />}
+                                        label='Community Annotations'
+                                        labelPlacement="start"
+                                    />
                                 </div>
                             </div>
                         </div>

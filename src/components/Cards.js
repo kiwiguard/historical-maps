@@ -3,7 +3,7 @@ import CardItem from './CardItem';
 import './Cards.css';
 
 export function Cards (mapList) {
-    return (mapList.map((e,i) => {
+    return (mapList.map((e) => {
         return (
             <>
                 <CardItem

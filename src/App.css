@@ -122,7 +122,7 @@ select {
 }
 
 .filter-label:first-of-type {
-  margin-top: 0;
+  margin-top: 2rem;
 }
 
 .checkbox-option {
