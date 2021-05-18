@@ -10,10 +10,9 @@ import { Checkbox , FormControlLabel } from '@material-ui/core';
 function Search() {
     let mapList = mapModels;    
     let mapViewItemList;
+    const [searchResults, setSearchResults] = useState([]);
 
     const DropDownMenu = () => {
-
-        const [searchResults, setSearchResults] = useState([]);
         const [isDone, setIsDone] = useState(false);
         const [searchTerm, setSearchTerm] = useState("");
 
@@ -66,36 +65,39 @@ function Search() {
 
     const CheckboxMenuMaker = () => {
         const [filterTerm, setFilterTerm] = useState("");
-        const [filterResults, setFilterResults] = useState([]);
+        // const [filterResults, setFilterResults] = useState([]);
         const [isDone, setIsDone] = useState(false);
+        let tempList = [];
 
         useEffect(() => {
-            const results = mapList.filter(item =>
+            const results = searchResults.filter(item =>
                 item.maker.includes(filterTerm)
             );
             console.log(results);
-            setFilterResults(results);
+            setSearchResults(results);
             setIsDone(true); 
         }, [filterTerm]);
 
-        let mapList = mapModels
         const handleChange = (e) => {
-            setFilterTerm(e.target.value);
-            // mapList.filter(item => item.maker.includes(e.target.value)).map((currentMap, i) => {
-            //     console.log(currentMap.maker);
-            //     return currentMap
-            // })
+            if (e.target.value === filterTerm) {
+                setSearchResults(tempList);
+                console.log('unchecked?') 
+            } else {
+                tempList = searchResults;
+                setFilterTerm(e.target.value);
+                console.log('checked')
+            }
         }
 
         if (isDone) {            
-            mapViewItemList = Cards(filterResults)
+            mapViewItemList = Cards(searchResults)
         } else {            
             mapViewItemList = '';
         }
 
         const uniqueItems = [];
         // eslint-disable-next-line
-        mapList.map(item => {
+        searchResults.map(item => {
             var existingItem = uniqueItems.find(x => x.maker === item.maker)
             if (!existingItem)
                 uniqueItems.push(item)
