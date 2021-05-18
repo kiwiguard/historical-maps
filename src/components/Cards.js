@@ -12,7 +12,7 @@ export function Cards (mapList) {
                     src='images/mini1.jpg'
                     text={`Map of ${e.name}`}
                     label={e.area}
-                    path='mapView'
+                    path={`mapView/${e.id}`}
                 />
             </>    
         )

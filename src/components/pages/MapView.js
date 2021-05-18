@@ -1,6 +1,6 @@
 import '../../App.css';
 import SimilarItems from '../SimilarItems';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup, Rectangle } from 'react-leaflet';
 
@@ -45,44 +45,48 @@ export function RenderMapModel () {
         }))
 }
 
-// export const RenderMapItem = (currentMap) =>{
-//     let item = currentMap;
-//     return (
-//         <>
-//             <section className='map-header'>
-//                 <Link to='/search'>
-//                     <button className='primary-btn'>Back to Search</button>
-//                 </Link>
-//                 <h1 className='libre'>Map of {item.name}</h1>
-//                 <div className='map-header--info'>
-//                     <h4><b>Created by: </b>{item.maker}</h4>
-//                     <h4><b>Date (ca): </b>{item.startDate} - {item.endDate}</h4>
-//                 </div>
-//             </section>
-//             <div className='map-div'>
-//             <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={true} className='mapid'>
-//                 <TileLayer
-//                     url={item.path}
-//                     noWrap='true'
-//                     minZoom='2'
-//                     maxZoom='4'
-//                     continuousWorld='false'
-//                 />
-//                 <Marker position={[51.505, -0.09]}>
-//                     <Popup>
-//                     Scandinavia.
-//                     </Popup>
-//                 </Marker>
-//                 <Marker position={[20, -45 ]}>
-//                     <Popup>
-//                     British Islands.
-//                     </Popup>
-//                 </Marker>
-//             </MapContainer>
-//             </div>
-//         </>
-//     )
-// }
+export function RenderMapItem () {
+    // let item = currentMap
+    let mapList = mapModels;
+    let { id } = useParams();
+    var item = mapList.find(x => x.id === id)
+
+    return (
+        <>
+            <section className='map-header'>
+                <Link to='/search'>
+                    <button className='primary-btn'>Back to Search</button>
+                </Link>
+                <h1 className='libre'>Map of {item.name}</h1>
+                <div className='map-header--info'>
+                    <h4><b>Created by: </b>{item.maker}</h4>
+                    <h4><b>Date (ca): </b>{item.startDate} - {item.endDate}</h4>
+                </div>
+            </section>
+            <div className='map-div'>
+            <MapContainer center={[51.505, -0.09]} zoom={3} scrollWheelZoom={true} className='mapid'>
+                <TileLayer
+                    url={item.path}
+                    noWrap='true'
+                    minZoom='2'
+                    maxZoom='4'
+                    continuousWorld='false'
+                />
+                <Marker position={[51.505, -0.09]}>
+                    <Popup>
+                    Scandinavia.
+                    </Popup>
+                </Marker>
+                <Marker position={[20, -45 ]}>
+                    <Popup>
+                    British Islands.
+                    </Popup>
+                </Marker>
+            </MapContainer>
+            </div>
+        </>
+    )
+}
 
 export function MapView () {
     // const mapPath = "../../maps/scandinavia/{z}/{x}/{y}.jpg"
@@ -90,6 +94,7 @@ export function MapView () {
     return (
     <>
         <div className='wrapper'>
+            <RenderMapItem />
             <RenderMapModel />
                 {/* <div className='map-div--image-container'>
                     <img src={startMap} alt={'map'} className='map-image' useMap='#image-map' />

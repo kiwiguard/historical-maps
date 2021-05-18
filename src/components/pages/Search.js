@@ -65,12 +65,32 @@ function Search() {
     }
 
     const CheckboxMenuMaker = () => {
+        const [filterTerm, setFilterTerm] = useState("");
+        const [filterResults, setFilterResults] = useState([]);
+        const [isDone, setIsDone] = useState(false);
+
+        useEffect(() => {
+            const results = mapList.filter(item =>
+                item.maker.includes(filterTerm)
+            );
+            console.log(results);
+            setFilterResults(results);
+            setIsDone(true); 
+        }, [filterTerm]);
+
         let mapList = mapModels
         const handleChange = (e) => {
-            mapList.filter(item => item.maker.includes(e.target.value)).map((currentMap, i) => {
-                console.log(currentMap.maker);
-                return currentMap
-            })
+            setFilterTerm(e.target.value);
+            // mapList.filter(item => item.maker.includes(e.target.value)).map((currentMap, i) => {
+            //     console.log(currentMap.maker);
+            //     return currentMap
+            // })
+        }
+
+        if (isDone) {            
+            mapViewItemList = Cards(filterResults)
+        } else {            
+            mapViewItemList = '';
         }
 
         const uniqueItems = [];
