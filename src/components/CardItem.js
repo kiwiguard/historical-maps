@@ -12,6 +12,8 @@ const CardItem = props => {
                     </figure>
                     <div className='cards--item-info'>
                         <h5 className='cards--item-text'>{props.text}</h5>
+                        <h4 className='cards--item-maker'>{props.maker}</h4>
+                        <h4 className='cards--item-date'>{props.date}</h4>
                     </div>
                 </Link>
             </div>

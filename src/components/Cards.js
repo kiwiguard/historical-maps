@@ -11,6 +11,8 @@ export function Cards (mapList) {
                     key={e.id} 
                     src='images/mini1.jpg'
                     text={`Map of ${e.name}`}
+                    maker={e.maker}
+                    date={`${e.startDate} - ${e.endDate}`}
                     label={e.area}
                     path={`mapView/${e.id}`}
                 />

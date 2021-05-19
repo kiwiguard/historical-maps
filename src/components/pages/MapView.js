@@ -75,7 +75,9 @@ export function RenderMapItem () {
                     />
                     <Rectangle bounds={[[40, -5],[65, 15]]}>
                         <Popup>
-                            Sweden
+                            <Link to='/about'>
+                                Sweden
+                            </Link>
                         </Popup>
                     </Rectangle>
                     <Marker position={[20, -45 ]}>
