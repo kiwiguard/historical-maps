@@ -1,5 +1,5 @@
 import '../../App.css';
-import StartPage from '../StartPage';
+import DataFetcher from '../DataFetcher';
 import MiniMap from '../MiniMap';
 import MiniSimilarItems from '../MiniSimilarItems';
 
@@ -13,7 +13,7 @@ function About () {
                 <MiniSimilarItems />
             </section>
             <section className='article-div'>
-                <StartPage />
+                <DataFetcher />
             </section>
         </div>
     </div>

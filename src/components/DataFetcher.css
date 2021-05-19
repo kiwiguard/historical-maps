@@ -1,0 +1,16 @@
+.wiki-data-div p{
+    margin-bottom: 1rem;
+}
+
+.wiki-data-div h2{
+    margin-top: 2rem;
+    color: #E2B13C;
+}
+
+.wiki-data-div h2 + h3{
+    margin-top: 1rem;
+}
+
+.wiki-data-div h3{
+    margin-top: 2rem;
+}
