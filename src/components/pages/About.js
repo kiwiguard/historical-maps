@@ -1,6 +1,7 @@
 import '../../App.css';
 import StartPage from '../StartPage';
-import SimilarItems from '../SimilarItems';
+import MiniMap from '../MiniMap';
+import MiniSimilarItems from '../MiniSimilarItems';
 
 
 function About () {
@@ -8,8 +9,8 @@ function About () {
     <div className='wrapper'>
         <div className='about'>
             <section className='sidebar-left'>
-                <div className='map-placeholder'></div>
-                <SimilarItems />
+                <MiniMap />
+                <MiniSimilarItems />
             </section>
             <section className='article-div'>
                 <StartPage />

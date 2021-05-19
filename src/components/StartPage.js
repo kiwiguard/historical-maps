@@ -14,9 +14,11 @@ function StartPage() {
     const renderWiki = (item) => {
 
         return (
-            <div>
-                <h1>{item.title}</h1>
+            <div className=''>
+                <h1 className='libre'>{item.title}</h1>
                 <p>{item.shortdesc}</p>
+                <br />
+                <p>{item.page}</p>
             </div>
             
         )
@@ -25,6 +27,7 @@ function StartPage() {
     //Original
     const fetchTasks = async(query) => {
         const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/${query}/summary`)
+        // const res = await fetch(`http://en.wikipedia.org/w/api.php?action=parse&prop=text&page=${query}&format=json`)
         const data = await res.json()
         
         console.log(data);
@@ -32,7 +35,8 @@ function StartPage() {
         setItem ({
             ...item,
             title: data.displaytitle,
-            shortdesc: data.extract
+            shortdesc: data.extract,
+            page: data.content_urls.desktop.page
         })
 
         setLoading(false);

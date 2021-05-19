@@ -1,0 +1,32 @@
+.mini-similar-items-wrapper {
+    background-color: #272727;
+    padding: 2rem 1rem;
+    max-width: 500px;
+}
+
+.mini-similar-items--heading {
+    display: block;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.mini-map-card {
+    display: flex;
+    border-bottom: 1px solid #707070;
+    width: 95%;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+}
+
+.mini-map-card img {
+    width: 128px;
+}
+
+.mini-similar-items--info {
+    color: #C2C2C2;
+    text-align: left;
+    padding-left: 1rem;
+    
+}
