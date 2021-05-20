@@ -19,6 +19,7 @@ function DataFetcher() {
                 <h1 className='libre'>{item.title}</h1>
                 <div dangerouslySetInnerHTML= {{__html:[item.content]}}>
                 </div>
+                <a href={`http://en.wikipedia.org/wiki/${item.url}`}>Read more on Wikipedia</a>
             </div>
             
         )
@@ -27,7 +28,7 @@ function DataFetcher() {
     //Original
     const fetchData = async(query) => {
         // const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/${query}`)
-        const res = await fetch(`http://en.wikipedia.org//w/api.php?action=query&origin=*&format=json&prop=extracts&titles=${query}&redirects=true&formatversion=2&rvprop=content&rvslots=*
+        const res = await fetch(`http://en.wikipedia.org//w/api.php?action=query&origin=*&format=json&prop=extracts&exintro&titles=${query}&redirects=true&formatversion=2&rvprop=content&rvslots=*&rvsection=0
         `)
         const data = await res.json()
         console.log(data)
@@ -35,7 +36,8 @@ function DataFetcher() {
         setItem ({
             ...item,
             title: data.query.pages[0].title,
-            content: data.query.pages[0].extract
+            content: data.query.pages[0].extract,
+            url: query
         })
 
         setLoading(false);
