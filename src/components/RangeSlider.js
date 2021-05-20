@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Slider } from '@material-ui/core'
 import './RangeSlider.css'
+import { PinDropSharp } from '@material-ui/icons';
 
-const RangeSlider = () => {
+const RangeSlider = (props) => {
     const [value, setValue] = useState([1718, 1991])
     const updateRange = (e, data) => {
         setValue(data)
+        props.onChange(data);
     }
     return (
         <div className='slider-div'>
@@ -14,9 +16,11 @@ const RangeSlider = () => {
             <Slider 
                 value={value}
                 onChange={updateRange}
+                marks
                 valueLabelDisplay='auto'
-                aria-labelledby='range-slider'
+                aria-labelledby="discrete-slider"
                 name='year'
+                step={100}
                 min={1400}
                 max={2021}
             />

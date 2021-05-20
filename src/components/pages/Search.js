@@ -11,6 +11,9 @@ function Search() {
     let mapList = mapModels;    
     let mapViewItemList;
     const [searchResults, setSearchResults] = useState([]);
+    const [areaResults, setAreaResults] = useState([]);
+    const [isChecked, setIsChecked] = useState(false);
+    const [rangeValue, setRangeValue] = useState("");
 
     const DropDownMenu = () => {
         const [isDone, setIsDone] = useState(false);
@@ -20,8 +23,9 @@ function Search() {
             const results = mapList.filter(item =>
                 item.area.includes(searchTerm)
             );
-            console.log(results);
+            
             setSearchResults(results);
+            setAreaResults(results);
         }, [searchTerm]);
 
         const handleChange = event => {
@@ -65,27 +69,27 @@ function Search() {
 
     const CheckboxMenuMaker = () => {
         const [filterTerm, setFilterTerm] = useState("");
-        // const [filterResults, setFilterResults] = useState([]);
         const [isDone, setIsDone] = useState(false);
-        let tempList = [];
 
         useEffect(() => {
             const results = searchResults.filter(item =>
                 item.maker.includes(filterTerm)
             );
-            console.log(results);
+            
             setSearchResults(results);
             setIsDone(true); 
         }, [filterTerm]);
 
         const handleChange = (e) => {
-            if (e.target.value === filterTerm) {
-                setSearchResults(tempList);
-                console.log('unchecked?') 
-            } else {
-                tempList = searchResults;
+            if (e.target.checked) {
                 setFilterTerm(e.target.value);
-                console.log('checked')
+                setIsChecked(true);
+               
+            } else 
+            {
+                setFilterTerm('');
+                setSearchResults(areaResults);                
+                setIsChecked(false);
             }
         }
 
@@ -115,6 +119,7 @@ function Search() {
                                 control={<Checkbox 
                                     value={item.maker}
                                     name={item.maker}
+                                    checked={isChecked}
                                     onChange={handleChange}
                                 />}
                                 label={item.maker}
@@ -125,6 +130,26 @@ function Search() {
                 })}
             </>
         )
+    }
+
+    useEffect(() => {
+        const sliderItems = [];
+        areaResults.forEach((item) => {
+            if(inRange(item.startDate,rangeValue[0],rangeValue[1])){
+                sliderItems.push(item);
+            }
+        })
+        
+        setSearchResults(sliderItems);
+
+    }, [rangeValue]);
+
+    function inRange(x, min, max) {
+        return ((x-min)*(x-max) <= 0);
+    }
+
+    function handleRangeSliderChange(newValue){
+        setRangeValue(newValue);        
     }
 
 
@@ -144,7 +169,7 @@ function Search() {
                         <div className='filter-div--options'>                            
                             {DropDownMenu()}                            
                             {CheckboxMenuMaker()}
-                            <RangeSlider />
+                            <RangeSlider onChange={handleRangeSliderChange} />
                             <div className='filter-div--community-options'>
                                 <div className='checkbox-option'>
                                     {/* <label htmlFor='community-annotations' className='filter-checkbox-community-label'>Community Annotations</label><br />
