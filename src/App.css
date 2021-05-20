@@ -13,10 +13,27 @@ h4 {
   font-weight: 400;
 }
 
+a,
+.leaflet-container a {
+  text-decoration: underline;
+  text-decoration-color:#E2B13C;
+  color: #0D1117;
+}
+
+a:hover,
+.leaflet-container a:hover {
+  color: #E2B13C;
+  text-decoration: none;
+}
+
 .libre {
   font-family: 'Libre Baskerville', serif;
   font-size: 2.2rem;
   margin-bottom: 1rem;
+}
+
+.float-left {
+  float: left;
 }
 
 .wrapper {
@@ -71,6 +88,7 @@ h4 {
   border-radius: 10px;
   padding: 0.8rem 1.2rem;
   cursor: pointer;
+  box-shadow: 0 6px 6px #00000016;
 }
 
 .App {
