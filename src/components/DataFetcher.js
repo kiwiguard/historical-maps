@@ -30,6 +30,7 @@ function DataFetcher() {
         const res = await fetch(`http://en.wikipedia.org//w/api.php?action=query&origin=*&format=json&prop=extracts&titles=${query}&redirects=true&formatversion=2&rvprop=content&rvslots=*
         `)
         const data = await res.json()
+        console.log(data)
 
         setItem ({
             ...item,
@@ -45,7 +46,7 @@ function DataFetcher() {
     
     return (
         <div>
-            <button onClick={() => fetchData('Sweden')}>Slumpa Wiki</button><br />
+            <button className='primary-btn' onClick={() => fetchData('Sweden')}>Load Wiki</button><br />
 
             {loading ? ('Laddar....') : renderWiki(item)}
         </div>
