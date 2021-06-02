@@ -70,15 +70,15 @@ export function RenderMapItem () {
         )}
         else if(marker.type === 'Marker') {
             return (
-                                <>
-                                <Marker position={[-70, 60]}>
-                                    <Popup>
-                                        <Link to={marker.link}>
-                                            {marker.content}
-                                        </Link>
-                                    </Popup>
-                                </Marker>
-                                </>
+                <>
+                <Marker position={[-70, 60]}>
+                    <Popup>
+                        <Link to={marker.link}>
+                            {marker.content}
+                        </Link>
+                    </Popup>
+                </Marker>
+                </>
             )
         }
 
@@ -106,21 +106,6 @@ export function RenderMapItem () {
                         maxZoom='4'
                         continuousWorld='false'
                     />
-                    
-                    {/* <Rectangle bounds={[[40, -5],[65, 15]]}>
-                        <Popup>
-                            <Link to={item.markers[0].link}>
-                                {item.markers[0].content}
-                            </Link>
-                        </Popup>
-                    </Rectangle>
-                    <Marker position={[-70, 60]}>
-                        <Popup>
-                            <Link to='/mapView/5'>
-                                Northeast Africa
-                            </Link>
-                        </Popup>
-                    </Marker> */}
                     {
                         markers.map((e => renderMapMarker(e)))                        
                     }
