@@ -9,7 +9,7 @@ export function Cards (mapList) {
                 <CardItem
                     className='cards-items'
                     key={e.id} 
-                    src='images/mini1.jpg'
+                    src={e.minimap}
                     text={`Map of ${e.name}`}
                     maker={e.maker}
                     date={`${e.startDate} - ${e.endDate}`}

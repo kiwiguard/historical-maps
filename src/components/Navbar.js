@@ -38,11 +38,11 @@ function Navbar() {
                             About
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link to='/mapView' className='nav-links' onClick={closeMobileMenu}>
                             Maps
                         </Link>
-                    </li>
+                    </li> */}
                    </ul>
                </div>
            </nav>

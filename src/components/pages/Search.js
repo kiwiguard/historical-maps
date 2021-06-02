@@ -40,7 +40,7 @@ function Search() {
                 uniqueItems.push(item)
         });
 
-
+        // eslint-disable-next-line
         const showData = () => {            
             setIsDone(true);
         }
@@ -53,15 +53,16 @@ function Search() {
 
         return (
             <div>
-                <h1>Area</h1>
-                <select onChange={handleChange}>
+                <label htmlFor='area-picker' className='filter-label'>Area</label><br />
+                <select onChange={handleChange} name='area-picker'>
+                    <option value="" selected disabled hidden>Choose Area</option>
                     {uniqueItems.map((item, index) => {
                         return (
                             <option key={index} value={item.area}> {item.area} </option>
                         )
                     })}
                 </select>
-                <button onClick={showData}>Show Map</button>
+                {/* <button onClick={showData}>Show Map</button> */}
 
             </div>
         )
@@ -141,7 +142,7 @@ function Search() {
         })
         
         setSearchResults(sliderItems);
-
+        // eslint-disable-next-line
     }, [rangeValue]);
 
     function inRange(x, min, max) {
@@ -151,7 +152,6 @@ function Search() {
     function handleRangeSliderChange(newValue){
         setRangeValue(newValue);        
     }
-
 
     const { search } = window.location;
     const query = new URLSearchParams(search).get('search-bar');
@@ -164,11 +164,13 @@ function Search() {
                     <div className='filter-div'>
                         <div className='filter-div--header'>
                             <h3>Advanced Search</h3>
-                            <p>CLEAR ALL</p>
+                            <p class="clear-search" onClick={() => window.location.reload()}>CLEAR ALL</p>
                         </div>
                         <div className='filter-div--options'>                            
-                            {DropDownMenu()}                            
-                            {CheckboxMenuMaker()}
+                            {DropDownMenu()}
+                            <div className='buffer'>
+                                {CheckboxMenuMaker()}
+                            </div>                            
                             <RangeSlider onChange={handleRangeSliderChange} />
                             <div className='filter-div--community-options'>
                                 <div className='checkbox-option'>

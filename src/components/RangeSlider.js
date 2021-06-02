@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Slider } from '@material-ui/core'
 import './RangeSlider.css'
+// eslint-disable-next-line
 import { PinDropSharp } from '@material-ui/icons';
 
 const RangeSlider = (props) => {

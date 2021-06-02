@@ -42,6 +42,10 @@ a:hover,
   height: fit-content;
 }
 
+.buffer {
+  min-height: 60px;
+}
+
 .search {
   display: flex;
   height: 90vh;
@@ -150,10 +154,17 @@ select {
   width: 100%;
 }
 
+.clear-search {
+  color: #C2C2C2;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .filter-label {
   float: left;
   font-weight: 500;
   margin-top: 2rem;
+  color: #272727;
 }
 
 .filter-label:first-of-type {
@@ -208,6 +219,10 @@ input[type='checkbox'] {
 .leaflet-container {
   width: 60vw; 
   height: 100vh;
+}
+
+.leaflet-container a {
+  text-decoration: none;
 }
 
 .map-header {

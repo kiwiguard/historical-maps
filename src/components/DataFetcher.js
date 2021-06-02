@@ -28,7 +28,7 @@ function DataFetcher() {
     //Original
     const fetchData = async(query) => {
         // const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/${query}`)
-        const res = await fetch(`http://en.wikipedia.org//w/api.php?action=query&origin=*&format=json&prop=extracts&exintro&titles=${query}&redirects=true&formatversion=2&rvprop=content&rvslots=*&rvsection=0
+        const res = await fetch(`https://en.wikipedia.org//w/api.php?action=query&origin=*&format=json&prop=extracts&exintro&titles=${query}&redirects=true&formatversion=2&rvprop=content&rvslots=*&rvsection=0
         `)
         const data = await res.json()
         console.log(data)
@@ -41,6 +41,7 @@ function DataFetcher() {
         })
 
         setLoading(false);
+        
 
         return item
     }
@@ -49,7 +50,6 @@ function DataFetcher() {
     return (
         <div>
             <button className='primary-btn' onClick={() => fetchData('Sweden')}>Load Wiki</button><br />
-
             {loading ? ('Laddar....') : renderWiki(item)}
         </div>
     )

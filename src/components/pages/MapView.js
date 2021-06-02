@@ -49,7 +49,34 @@ export function RenderMapItem () {
     // let item = currentMap
     let mapList = mapModels;
     let { id } = useParams();
-    var item = mapList.find(x => x.id === id)
+    var item = mapList.find(x => x.id === id);
+    var markers = item.markers;
+
+
+    function renderMapMarker() {
+        markers.forEach((e => {
+            console.log(e);
+            if(e.type === 'Rectangle') {
+                return (
+                    <Rectangle bounds={[[40, -5],[65, 15]]}>
+                        <Popup>
+                            <Link to={e.link}>
+                                {e.content}
+                            </Link>
+                        </Popup>
+                    </Rectangle> 
+                )} else if(e.type === 'Marker') {
+                    return (
+                        <Marker position={[-70, 60]}>
+                            <Popup>
+                                <Link to={e.link}>
+                                    {e.content}
+                                </Link>
+                            </Popup>
+                        </Marker>
+                    )}
+        }))
+    }
 
     return (
         <>
@@ -73,19 +100,23 @@ export function RenderMapItem () {
                         maxZoom='4'
                         continuousWorld='false'
                     />
-                    <Rectangle bounds={[[40, -5],[65, 15]]}>
+                    
+                    {/* <Rectangle bounds={[[40, -5],[65, 15]]}>
                         <Popup>
-                            <Link to='/about'>
-                                Sweden
+                            <Link to={item.markers[0].link}>
+                                {item.markers[0].content}
                             </Link>
                         </Popup>
                     </Rectangle>
-                    <Marker position={[20, -45 ]}>
+                    <Marker position={[-70, 60]}>
                         <Popup>
-                        British Islands.
+                            <Link to='/mapView/5'>
+                                Northeast Africa
+                            </Link>
                         </Popup>
-                    </Marker>
+                    </Marker> */}
                 </MapContainer>
+                {renderMapMarker()}
                 </div>
             </div>
             <SimilarItems />
@@ -94,8 +125,6 @@ export function RenderMapItem () {
 }
 
 export function MapView (id) {
-    console.log(id)
-    console.log(mapModels)
     return (
     <>
         <div className='wrapper'>
