@@ -51,31 +51,37 @@ export function RenderMapItem () {
     let { id } = useParams();
     var item = mapList.find(x => x.id === id);
     var markers = item.markers;
+   
 
 
-    function renderMapMarker() {
-        markers.forEach((e => {
-            console.log(e);
-            if(e.type === 'Rectangle') {
-                return (
-                    <Rectangle bounds={[[40, -5],[65, 15]]}>
-                        <Popup>
-                            <Link to={e.link}>
-                                {e.content}
-                            </Link>
-                        </Popup>
-                    </Rectangle> 
-                )} else if(e.type === 'Marker') {
-                    return (
-                        <Marker position={[-70, 60]}>
-                            <Popup>
-                                <Link to={e.link}>
-                                    {e.content}
-                                </Link>
-                            </Popup>
-                        </Marker>
-                    )}
-        }))
+    function renderMapMarker(marker) { 
+        console.log(marker.bounds);
+        if(marker.type === 'Rectangle') {            
+            return (
+                <>                    
+                <Rectangle bounds={marker.bounds}>
+                    <Popup>
+                        <Link to={marker.link}>
+                            {marker.content}
+                        </Link>
+                    </Popup>
+                </Rectangle> 
+                </>
+        )}
+        else if(marker.type === 'Marker') {
+            return (
+                                <>
+                                <Marker position={[-70, 60]}>
+                                    <Popup>
+                                        <Link to={marker.link}>
+                                            {marker.content}
+                                        </Link>
+                                    </Popup>
+                                </Marker>
+                                </>
+            )
+        }
+
     }
 
     return (
@@ -115,8 +121,11 @@ export function RenderMapItem () {
                             </Link>
                         </Popup>
                     </Marker> */}
+                    {
+                        markers.map((e => renderMapMarker(e)))                        
+                    }
                 </MapContainer>
-                {renderMapMarker()}
+                
                 </div>
             </div>
             <SimilarItems />

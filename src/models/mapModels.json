@@ -13,8 +13,8 @@
      "clickType" : "OpenCard",
      "markers" : [{
             "id" : "1",
-            "type" : "Reactangle",
-            "bounds" : "{[[40, -5], [65, 15]]}",
+            "type" : "Rectangle",
+            "bounds" : [[40, -5], [65, 15]],
             "link" : "/about",
             "content" : "Sweden"
         },
@@ -38,7 +38,22 @@
         "maker" : "Unknown",
         "description" : "Karta över Grekland",
         "link" : "https://en.wikipedia.org/wiki/Greece",
-        "clickType" : "OpenCard"
+        "clickType" : "OpenCard",
+        "markers" : [{
+            "id" : "1",
+            "type" : "Rectangle",
+            "bounds" : [[40, -5], [65, 15]],
+            "link" : "/about",
+            "content" : "Sweden"
+        },
+        {
+            "id" : "2",
+            "type" : "Marker",
+            "bounds" : "{[-70, 60]}",
+            "link" : "/mapView/5",
+            "content" : "Northeast Africa"
+
+        }]
     },
     {
         "id" : "3",
@@ -51,7 +66,22 @@
         "maker" : "Robert Sayer (publisher)",
         "description" : "Karta över Finska viken",
         "link" : "https://en.wikipedia.org/wiki/Gulf_of_Finland",
-        "clickType" : "OpenCard"
+        "clickType" : "OpenCard",
+        "markers" : [{
+            "id" : "1",
+            "type" : "Rectangle",
+            "bounds" : [[40, -5], [65, 15]],
+            "link" : "/about",
+            "content" : "Sweden"
+        },
+        {
+            "id" : "2",
+            "type" : "Marker",
+            "bounds" : "{[-70, 60]}",
+            "link" : "/mapView/5",
+            "content" : "Northeast Africa"
+
+        }]
     },
     {
         "id" : "4",
@@ -64,7 +94,22 @@
         "maker" : "Gustaf af Klint",
         "description" : "Karta över Gottland",
         "link" : "https://en.wikipedia.org/wiki/Gotland",
-        "clickType" : "OpenCard"
+        "clickType" : "OpenCard",
+        "markers" : [{
+            "id" : "1",
+            "type" : "Rectangle",
+            "bounds" : [[40, -5], [65, 15]],
+            "link" : "/about",
+            "content" : "Sweden"
+        },
+        {
+            "id" : "2",
+            "type" : "Marker",
+            "bounds" : "{[-70, 60]}",
+            "link" : "/mapView/5",
+            "content" : "Northeast Africa"
+
+        }]
     },
     {
         "id" : "5",
@@ -77,7 +122,22 @@
         "maker" : "Claudio Ptolomeo",
         "description" : "Karta över Nordöstra Africa",
         "link" : "https://en.wikipedia.org/wiki/Northeast_Africa",
-        "clickType" : "OpenCard"
+        "clickType" : "OpenCard",
+        "markers" : [{
+            "id" : "1",
+            "type" : "Rectangle",
+            "bounds" : [[40, -5], [65, 15]],
+            "link" : "/about",
+            "content" : "Sweden"
+        },
+        {
+            "id" : "2",
+            "type" : "Marker",
+            "bounds" : "{[-70, 60]}",
+            "link" : "/mapView/5",
+            "content" : "Northeast Africa"
+
+        }]
     },
     {
         "id" : "6",
@@ -90,6 +150,21 @@
         "maker" : "Robert Sayer (publisher)",
         "description" : "Karta över Skåne och Blekinge",
         "link" : "https://en.wikipedia.org/wiki/Scania",
-        "clickType" : "OpenCard"
+        "clickType" : "OpenCard",
+        "markers" : [{
+            "id" : "1",
+            "type" : "Rectangle",
+            "bounds" : [[40, -5], [65, 15]],
+            "link" : "/about",
+            "content" : "Sweden"
+        },
+        {
+            "id" : "2",
+            "type" : "Marker",
+            "bounds" : "{[-70, 60]}",
+            "link" : "/mapView/5",
+            "content" : "Northeast Africa"
+
+        }]
     }
 ]
