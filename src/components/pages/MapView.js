@@ -55,7 +55,6 @@ export function RenderMapItem () {
 
     function renderMapMarker() {
         markers.forEach((e => {
-            console.log(e);
             if(e.type === 'Rectangle') {
                 return (
                     <Rectangle bounds={[[40, -5],[65, 15]]}>
@@ -65,16 +64,17 @@ export function RenderMapItem () {
                             </Link>
                         </Popup>
                     </Rectangle> 
-                )} else if(e.type === 'Marker') {
-                    return (
-                        <Marker position={[-70, 60]}>
-                            <Popup>
-                                <Link to={e.link}>
-                                    {e.content}
-                                </Link>
-                            </Popup>
-                        </Marker>
-                    )}
+            )} else if(e.type === 'Marker') {
+                console.log(e);
+                return (
+                    <Marker position={[-70, 60]}>
+                        <Popup>
+                            <Link to={e.link}>
+                                {e.content}
+                            </Link>
+                        </Popup>
+                    </Marker>
+                )}
         }))
     }
 
@@ -100,23 +100,9 @@ export function RenderMapItem () {
                         maxZoom='4'
                         continuousWorld='false'
                     />
-                    
-                    {/* <Rectangle bounds={[[40, -5],[65, 15]]}>
-                        <Popup>
-                            <Link to={item.markers[0].link}>
-                                {item.markers[0].content}
-                            </Link>
-                        </Popup>
-                    </Rectangle>
-                    <Marker position={[-70, 60]}>
-                        <Popup>
-                            <Link to='/mapView/5'>
-                                Northeast Africa
-                            </Link>
-                        </Popup>
-                    </Marker> */}
+                    {renderMapMarker()}
                 </MapContainer>
-                {renderMapMarker()}
+                
                 </div>
             </div>
             <SimilarItems />
