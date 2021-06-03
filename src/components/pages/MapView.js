@@ -71,7 +71,7 @@ export function RenderMapItem () {
         else if(marker.type === 'Marker') {
             return (
                 <>
-                <Marker position={[-70, 60]}>
+                <Marker position={marker.bounds}>
                     <Popup>
                         <Link to={marker.link}>
                             {marker.content}
