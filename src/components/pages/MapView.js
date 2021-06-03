@@ -1,5 +1,6 @@
 import '../../App.css';
 import SimilarItems from '../SimilarItems';
+import ExcerptFetcher from '../ExcerptFetcher';
 import { Link, useParams } from 'react-router-dom';
 import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup, Rectangle } from 'react-leaflet';
@@ -63,8 +64,7 @@ export function RenderMapItem () {
                     <Popup>
                         <h3 className='leaflet-popup-content--heading'>{marker.heading}</h3>
                         <img src={marker.image} alt='Minimap' className='leaflet-popup-content--image'/>
-                        <p className='leaflet-popup-content--content'>{marker.content}</p>
-                        <Link className='leaflet-popup-content--link' to={marker.link}>See more &gt;</Link>
+                        <Link className='leaflet-popup-content--link' to={marker.link}>Got to map &gt;</Link>
                     </Popup>
                 </Rectangle> 
                 </>
@@ -75,9 +75,8 @@ export function RenderMapItem () {
                 <Marker position={marker.bounds}>
                     <Popup>
                         <h3 className='leaflet-popup-content--heading'>{marker.heading}</h3>
-                        <img src={marker.image} alt='Minimap' className='leaflet-popup-content--image'/>
-                        <p className='leaflet-popup-content--content'>{marker.content}</p>
-                        <Link className='leaflet-popup-content--link'to={marker.link}>See more &gt;</Link>
+                        <div className='leaflet-popup-content--content'><ExcerptFetcher /></div>
+                        <Link className='leaflet-popup-content--link' to={marker.link}>Read More &gt;</Link>
                     </Popup>
                 </Marker>
                 </>

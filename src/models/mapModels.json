@@ -13,8 +13,8 @@
      "clickType" : "OpenCard",
      "markers" : [{
             "id" : "1",
-            "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
+            "type" : "Marker",
+            "bounds" : [50, 5],
             "link" : "/about",
             "content" : "Sweden",
             "heading" : "Sweden",
@@ -22,8 +22,8 @@
         },
         {
             "id" : "2",
-            "type" : "Marker",
-            "bounds" : [-70, 60],
+            "type" : "Rectangle",
+            "bounds" : [[-71, 45], [-60, 120]],
             "link" : "/mapView/5",
             "content" : "Northeast Africa",
             "heading" : "Northeast Africa",

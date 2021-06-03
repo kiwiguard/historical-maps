@@ -1,9 +1,8 @@
-// import { useState, useEffect } from 'react'
 import { useState } from 'react';
 import './DataFetcher.css';
 
 
-function DataFetcher() {
+function ExcerptFetcher(query) {
     // const initialItemState = { title: '', shortdesc  : '' };
     const [item, setItem] = useState({ 
         title: '', 
@@ -13,45 +12,38 @@ function DataFetcher() {
 
 
     const renderWiki = (item) => {
-
         return (
             <div className='wiki-data-div'>
                 <h1 className='libre'>{item.title}</h1>
                 <div dangerouslySetInnerHTML= {{__html:[item.content]}}>
                 </div>
-                <a href={`http://en.wikipedia.org/wiki/${item.url}`}>Read more on Wikipedia</a>
             </div>
-            
         )
     }
 
     //Original
     const fetchData = async(query) => {
-        // const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/${query}`)
-        const res = await fetch(`https://en.wikipedia.org//w/api.php?action=query&origin=*&format=json&prop=extracts&exintro&titles=${query}&redirects=true&formatversion=2&rvprop=content&rvslots=*&rvsection=0
-        `)
+        const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${query}`)
         const data = await res.json()
         console.log(data)
 
         setItem ({
             ...item,
-            title: data.query.pages[0].title,
-            content: data.query.pages[0].extract,
+            title: data.displaytitle,
+            content: data.extract_html,
             url: query
         })
 
         setLoading(false);
-        
-
         return item
     }
     window.onload = () => fetchData('Sweden')
-    
+
     return (
         <div>
-            {loading ? ('Laddar....') : renderWiki(item)}
+        {loading ? ('Laddar....') : renderWiki(item)}
         </div>
-    )
+    )     
 }
 
-export default DataFetcher
+export default ExcerptFetcher
