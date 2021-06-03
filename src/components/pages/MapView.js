@@ -3,6 +3,7 @@ import SimilarItems from '../SimilarItems';
 import { Link, useParams } from 'react-router-dom';
 import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup, Rectangle } from 'react-leaflet';
+import '../Popup.css';
 
 export function RenderMapModel () { 
     let mapList = mapModels   
@@ -55,15 +56,15 @@ export function RenderMapItem () {
 
 
     function renderMapMarker(marker) { 
-        console.log(marker.bounds);
         if(marker.type === 'Rectangle') {            
             return (
                 <>                    
                 <Rectangle bounds={marker.bounds}>
                     <Popup>
-                        <Link to={marker.link}>
-                            {marker.content}
-                        </Link>
+                        <h3 className='leaflet-popup-content--heading'>{marker.heading}</h3>
+                        <img src={marker.image} alt='Minimap' className='leaflet-popup-content--image'/>
+                        <p className='leaflet-popup-content--content'>{marker.content}</p>
+                        <Link className='leaflet-popup-content--link' to={marker.link}>See more &gt;</Link>
                     </Popup>
                 </Rectangle> 
                 </>
@@ -73,9 +74,10 @@ export function RenderMapItem () {
                 <>
                 <Marker position={marker.bounds}>
                     <Popup>
-                        <Link to={marker.link}>
-                            {marker.content}
-                        </Link>
+                        <h3 className='leaflet-popup-content--heading'>{marker.heading}</h3>
+                        <img src={marker.image} alt='Minimap' className='leaflet-popup-content--image'/>
+                        <p className='leaflet-popup-content--content'>{marker.content}</p>
+                        <Link className='leaflet-popup-content--link'to={marker.link}>See more &gt;</Link>
                     </Popup>
                 </Marker>
                 </>

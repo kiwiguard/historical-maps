@@ -16,21 +16,26 @@
             "type" : "Rectangle",
             "bounds" : [[40, -5], [65, 15]],
             "link" : "/about",
-            "content" : "Sweden"
+            "content" : "Sweden",
+            "heading" : "Sweden",
+            "image" : ""
         },
         {
             "id" : "2",
             "type" : "Marker",
-            "bounds" : "{[-70, 60]}",
+            "bounds" : [-70, 60],
             "link" : "/mapView/5",
-            "content" : "Northeast Africa"
+            "content" : "Northeast Africa",
+            "heading" : "Northeast Africa",
+            "image" : "../../images/minimaps/1584_Ptolemaei_Alexandrini_Geographiae_Libri_Octo_109_mini.jpg"
         },
         {
             "id" : "3",
             "type" : "Rectangle",
             "bounds" : [[-57, 28], [-30, 60]],
             "link" : "/mapView/2",
-            "content" : "Greece"
+            "heading" : "Greece",
+            "image" : "../../images/minimaps/1651-1724_Material_cartográfico__75_mini.jpg"
         }]
     },
     {
@@ -50,7 +55,9 @@
             "type" : "Rectangle",
             "bounds" : [[70.2, -13], [73.2, 15]],
             "link" : "/about",
-            "content" : "Greece"
+            "content" : "Greece",
+            "heading" : "Greece",
+            "image" : ""
         }]
     },
     {
@@ -70,14 +77,18 @@
             "type" : "Rectangle",
             "bounds" : [[-75.2, 9], [-28, 71]],
             "link" : "/mapView/4",
-            "content" : "Gottland"
+            "content" : "",
+            "heading" : "Gottland",
+            "image" : "../../images/minimaps/1812_Gottland_Klint_mini.jpg"
         },
         {
             "id" : "2",
             "type" : "Rectangle",
             "bounds" : [[-78, -87], [78.2, -78]],
             "link" : "/mapView/6",
-            "content" : "Baltic West"
+            "heading" : "Baltic West",
+            "content" : "",
+            "image" : "../../images/minimaps/1789_Baltic_West_mini.jpg"
 
         },
         {
@@ -85,7 +96,9 @@
             "type" : "Marker",
             "bounds" : [62, -65],
             "link" : "https://sketchfab.com/3d-models/the-dalaro-wreck-bodekull-9dd0c8b9f37f4ea284569ee313d81ad3",
-            "content" : "Dalarö wreck, Bodekull"
+            "heading" : "Dalarö wreck, Bodekull",
+            "content" : "",
+            "image" : "../../images/minimaps/Bodekull 4k redigerad_web_mini.jpg"
 
         }]
     },
@@ -102,11 +115,13 @@
         "link" : "https://en.wikipedia.org/wiki/Gotland",
         "clickType" : "OpenCard",
         "markers" : [{
-            "id" : "2",
+            "id" : "1",
             "type" : "Marker",
             "bounds" : [-6.2, -42],
             "link" : "/mapView/7",
-            "content" : "Wisby"
+            "heading" : "Wisby",
+            "content" : "",
+            "image" : "../../images/minimaps/2020-01-30_20_53_43_mini.png"
 
         }]
     },
@@ -122,21 +137,7 @@
         "description" : "Karta över Nordöstra Africa",
         "link" : "https://en.wikipedia.org/wiki/Northeast_Africa",
         "clickType" : "OpenCard",
-        "markers" : [{
-            "id" : "1",
-            "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
-            "link" : "/about",
-            "content" : "Sweden"
-        },
-        {
-            "id" : "2",
-            "type" : "Marker",
-            "bounds" : [-70, 60],
-            "link" : "/mapView/5",
-            "content" : "Northeast Africa"
-
-        }]
+        "markers" : []
     },
     {
         "id" : "6",
@@ -155,14 +156,18 @@
             "type" : "Rectangle",
             "bounds" : [[78.2, 87], [-78.2, 79]],
             "link" : "/mapView/3",
-            "content" : "Baltic East"
+            "heading" : "Baltic East",
+            "content" : "",
+            "image" : "../../images/minimaps/1789_Baltic_East_mini.jpg"
         },
         {
             "id" : "2",
             "type" : "Marker",
             "bounds" : [15, 75],
             "link" : "/mapView/4",
-            "content" : "Gottland"
+            "heading" : "Gottland",
+            "content" : "",
+            "image" : "../../images/minimaps/1812_Gottland_Klint_mini.jpg"
 
         },
         {
@@ -170,7 +175,9 @@
             "type" : "Marker",
             "bounds" : [26, -34],
             "link" : "/mapView/7",
-            "content" : "Battle of the Sound"
+            "heading" : "Battle of the Sound",
+            "content" : "",
+            "image" : "../../images/minimaps/1658_Sund_mini.jpg"
 
         }]
     },
