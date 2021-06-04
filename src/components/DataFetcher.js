@@ -45,10 +45,11 @@ function DataFetcher() {
 
         return item
     }
-    window.onload = () => fetchData('Sweden')
+    // window.onload = () => fetchData('Sweden')
     
     return (
         <div>
+        <button className='primary-btn' onClick={() => fetchData('Sweden')}>Load Wiki</button><br />
             {loading ? ('Laddar....') : renderWiki(item)}
         </div>
     )

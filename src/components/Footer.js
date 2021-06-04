@@ -21,7 +21,7 @@ function Footer() {
                     <div className='footer-info footer-info--contact'>
                         <h4>Contact Us</h4>
                         <p>info@example.com</p>
-                        <p>+46(0)70 123 12 34</p>
+                        <p>+46(0)70 XXX XX XX</p>
                     </div>
                     <div className='footer-info footer-info--socials'>
                         <FacebookIcon />

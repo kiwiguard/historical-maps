@@ -50,15 +50,7 @@
         "description" : "Karta över Grekland",
         "link" : "https://en.wikipedia.org/wiki/Greece",
         "clickType" : "OpenCard",
-        "markers" : [{
-            "id" : "1",
-            "type" : "Rectangle",
-            "bounds" : [[70.2, -13], [73.2, 15]],
-            "link" : "/about",
-            "content" : "Greece",
-            "heading" : "Greece",
-            "image" : ""
-        }]
+        "markers" : []
     },
     {
         "id" : "3",
@@ -95,7 +87,7 @@
             "id" : "3",
             "type" : "Marker",
             "bounds" : [62, -65],
-            "link" : "https://sketchfab.com/3d-models/the-dalaro-wreck-bodekull-9dd0c8b9f37f4ea284569ee313d81ad3",
+            "link" : "/mapView/8",
             "heading" : "Dalarö wreck, Bodekull",
             "content" : "",
             "image" : "../../images/minimaps/Bodekull 4k redigerad_web_mini.jpg"
@@ -116,9 +108,9 @@
         "clickType" : "OpenCard",
         "markers" : [{
             "id" : "1",
-            "type" : "Marker",
-            "bounds" : [-6.2, -42],
-            "link" : "/mapView/7",
+            "type" : "Rectangle",
+            "bounds" : [[-8.8, -41.5], [-6, -32.5]],
+            "link" : "/mapView/9",
             "heading" : "Wisby",
             "content" : "",
             "image" : "../../images/minimaps/2020-01-30_20_53_43_mini.png"
@@ -196,20 +188,6 @@
         "markers" : []
     },
     {
-        "id" : "7",
-        "path" : "../../maps/2020-01-30 20_53_43-Idea Vetustissimiæ arcis Wisburgi prope urbem Wisbyensem in Gothlandia qvalis ea/{z}/{x}/{y}.jpg",
-        "minimap" : "../../images/minimaps/2020-01-30_20_53_43_mini.png",
-        "name" : "Visby fortress",
-        "startDate" : "1679",
-        "endDate" : "",
-        "area" : "Visby",
-        "maker" : "Erik Reitz, Erik Dahlbergh",
-        "description" : "Drawing of Visby Fortress",
-        "link" : "https://en.wikipedia.org/wiki/Visby",
-        "clickType" : "OpenCard",
-        "markers" : []
-    },
-    {
         "id" : "8",
         "path" : "../../maps/Bodekull_4k_redigerad_web/{z}/{x}/{y}.jpg",
         "minimap" : "../../images/minimaps/Bodekull 4k redigerad_web_mini.jpg",
@@ -220,6 +198,20 @@
         "maker" : "Project Baltacar",
         "description" : "3D rendition of The Dalarö wreck / Bodekull",
         "link" : "https://sketchfab.com/3d-models/the-dalaro-wreck-bodekull-9dd0c8b9f37f4ea284569ee313d81ad3",
+        "clickType" : "OpenCard",
+        "markers" : []
+    },
+    {
+        "id" : "9",
+        "path" : "../../maps/2020-01-30 20_53_43-Idea Vetustissimiæ arcis Wisburgi prope urbem Wisbyensem in Gothlandia qvalis ea/{z}/{x}/{y}.jpg",
+        "minimap" : "../../images/minimaps/2020-01-30_20_53_43_mini.png",
+        "name" : "Visby fortress",
+        "startDate" : "1679",
+        "endDate" : "",
+        "area" : "Visby",
+        "maker" : "Erik Reitz, Erik Dahlbergh",
+        "description" : "Drawing of Visby Fortress",
+        "link" : "https://en.wikipedia.org/wiki/Visby",
         "clickType" : "OpenCard",
         "markers" : []
     }

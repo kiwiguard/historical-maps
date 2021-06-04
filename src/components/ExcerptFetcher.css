@@ -1,0 +1,10 @@
+.popup-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+}
+
+.popup-excerpt {
+    max-height: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

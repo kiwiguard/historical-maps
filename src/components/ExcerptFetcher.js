@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './DataFetcher.css';
+import './ExcerptFetcher.css';
 
-
-function ExcerptFetcher(query) {
+export function ExcerptFetcher(query) {
     // const initialItemState = { title: '', shortdesc  : '' };
     const [item, setItem] = useState({ 
         title: '', 
@@ -14,7 +14,6 @@ function ExcerptFetcher(query) {
     const renderWiki = (item) => {
         return (
             <div className='wiki-data-div'>
-                <h1 className='libre'>{item.title}</h1>
                 <div dangerouslySetInnerHTML= {{__html:[item.content]}}>
                 </div>
             </div>
@@ -40,7 +39,8 @@ function ExcerptFetcher(query) {
     window.onload = () => fetchData('Sweden')
 
     return (
-        <div>
+        <div className='popup-excerpt'>
+        <button className='primary-btn popup-btn' onClick={() => fetchData('Sweden')}>Load Wiki</button><br />
         {loading ? ('Laddar....') : renderWiki(item)}
         </div>
     )     

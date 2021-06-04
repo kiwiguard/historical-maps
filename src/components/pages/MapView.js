@@ -1,6 +1,5 @@
 import '../../App.css';
 import SimilarItems from '../SimilarItems';
-import ExcerptFetcher from '../ExcerptFetcher';
 import { Link, useParams } from 'react-router-dom';
 import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup, Rectangle } from 'react-leaflet';
@@ -53,8 +52,6 @@ export function RenderMapItem () {
     let { id } = useParams();
     var item = mapList.find(x => x.id === id);
     var markers = item.markers;
-   
-
 
     function renderMapMarker(marker) { 
         if(marker.type === 'Rectangle') {            
@@ -75,7 +72,8 @@ export function RenderMapItem () {
                 <Marker position={marker.bounds}>
                     <Popup>
                         <h3 className='leaflet-popup-content--heading'>{marker.heading}</h3>
-                        <div className='leaflet-popup-content--content'><ExcerptFetcher /></div>
+                        <img src={marker.image} alt='Minimap' className='leaflet-popup-content--image'/>
+                        {/* <div className='leaflet-popup-content--content'><ExcerptFetcher /></div> */}
                         <Link className='leaflet-popup-content--link' to={marker.link}>Read More &gt;</Link>
                     </Popup>
                 </Marker>
