@@ -1,7 +1,6 @@
 import { Button, Grid, Paper, TextField } from "@material-ui/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const fs = require('fs');
 
 const CreateMap = () => {
 
@@ -12,9 +11,16 @@ const CreateMap = () => {
         area: "",
         maker: "",
         description: "",
-        link: "",
-
+        link: ""
     };
+
+    const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
 
     const [newMap, setNewMap] = useState(initialFormState)
 
@@ -25,7 +31,18 @@ const CreateMap = () => {
     }
 
     const submitForm = () => {
-        console.log(newMap);        
+        //console.log(newMap);
+        
+        fetch("api/add", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newMap)
+        }).then((res) => res.json())
+          .then((data) => setData(data.message))
+        
+
     }
 
 
@@ -100,6 +117,7 @@ const CreateMap = () => {
                     </Grid>
                 </Paper>
             </form>
+            <p>{!data ? "Loading..." : data}</p>
         </div>
     )
 }
