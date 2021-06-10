@@ -6,6 +6,7 @@ import Search from './components/pages/Search';
 import MapView, { RenderMapItem } from './components/pages/MapView';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { Admin } from './components/pages/Admin';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" exact component={About}/>
           <Route path="/mapView" exact component={MapView}/>
           <Route path="/mapView/:id" exact component={RenderMapItem}/>
+          <Route path="/admin" exact component={Admin}/>
         </Switch>
         <Footer />
       </Router>
