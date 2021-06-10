@@ -3,6 +3,7 @@ import SimilarItems from '../SimilarItems';
 import { Link, useParams } from 'react-router-dom';
 import mapModels from '../../models/mapModels.json';
 import { MapContainer, TileLayer, Marker, Popup, Rectangle } from 'react-leaflet';
+import '../Popup.css';
 
 export function RenderMapModel () { 
     let mapList = mapModels   
@@ -51,34 +52,32 @@ export function RenderMapItem () {
     let { id } = useParams();
     var item = mapList.find(x => x.id === id);
     var markers = item.markers;
-   
-
 
     function renderMapMarker(marker) { 
-        console.log(marker.bounds);
         if(marker.type === 'Rectangle') {            
             return (
                 <>                    
                 <Rectangle bounds={marker.bounds}>
                     <Popup>
-                        <Link to={marker.link}>
-                            {marker.content}
-                        </Link>
+                        <h3 className='leaflet-popup-content--heading'>{marker.heading}</h3>
+                        <img src={marker.image} alt='Minimap' className='leaflet-popup-content--image'/>
+                        <Link className='leaflet-popup-content--link' to={marker.link}>Got to map &gt;</Link>
                     </Popup>
                 </Rectangle> 
                 </>
         )}
         else if(marker.type === 'Marker') {
             return (
-                                <>
-                                <Marker position={[-70, 60]}>
-                                    <Popup>
-                                        <Link to={marker.link}>
-                                            {marker.content}
-                                        </Link>
-                                    </Popup>
-                                </Marker>
-                                </>
+                <>
+                <Marker position={marker.bounds}>
+                    <Popup>
+                        <h3 className='leaflet-popup-content--heading'>{marker.heading}</h3>
+                        <img src={marker.image} alt='Minimap' className='leaflet-popup-content--image'/>
+                        {/* <div className='leaflet-popup-content--content'><ExcerptFetcher /></div> */}
+                        <Link className='leaflet-popup-content--link' to={marker.link}>Read More &gt;</Link>
+                    </Popup>
+                </Marker>
+                </>
             )
         }
 
@@ -106,21 +105,6 @@ export function RenderMapItem () {
                         maxZoom='4'
                         continuousWorld='false'
                     />
-                    
-                    {/* <Rectangle bounds={[[40, -5],[65, 15]]}>
-                        <Popup>
-                            <Link to={item.markers[0].link}>
-                                {item.markers[0].content}
-                            </Link>
-                        </Popup>
-                    </Rectangle>
-                    <Marker position={[-70, 60]}>
-                        <Popup>
-                            <Link to='/mapView/5'>
-                                Northeast Africa
-                            </Link>
-                        </Popup>
-                    </Marker> */}
                     {
                         markers.map((e => renderMapMarker(e)))                        
                     }

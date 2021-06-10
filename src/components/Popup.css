@@ -1,0 +1,44 @@
+.leaflet-popup-content-wrapper {
+    border-radius: 10px;
+    max-width: 350px;
+    max-height: 350px;
+   
+}
+
+.leaflet-popup-content {
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.leaflet-popup-content--heading {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.leaflet-popup-content--content {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.leaflet-popup-content--link {
+    padding-left: 65%;
+    font-size: 1rem;
+    text-decoration: underline !important;
+    text-decoration-color: #E2B13C !important;
+}
+
+.leaflet-popup-content--link:hover {
+    text-decoration: none !important;
+}
+
+.leaflet-popup-content--image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.leaflet-interactive {
+    stroke: #ffffff;
+    fill: #ffffff;
+}

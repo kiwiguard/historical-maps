@@ -13,17 +13,29 @@
      "clickType" : "OpenCard",
      "markers" : [{
             "id" : "1",
-            "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
+            "type" : "Marker",
+            "bounds" : [50, 5],
             "link" : "/about",
-            "content" : "Sweden"
+            "content" : "Sweden",
+            "heading" : "Sweden",
+            "image" : ""
         },
         {
             "id" : "2",
-            "type" : "Marker",
-            "bounds" : "{[-70, 60]}",
+            "type" : "Rectangle",
+            "bounds" : [[-71, 45], [-60, 120]],
             "link" : "/mapView/5",
-            "content" : "Northeast Africa"
+            "content" : "Northeast Africa",
+            "heading" : "Northeast Africa",
+            "image" : "../../images/minimaps/1584_Ptolemaei_Alexandrini_Geographiae_Libri_Octo_109_mini.jpg"
+        },
+        {
+            "id" : "3",
+            "type" : "Rectangle",
+            "bounds" : [[-57, 28], [-30, 60]],
+            "link" : "/mapView/2",
+            "heading" : "Greece",
+            "image" : "../../images/minimaps/1651-1724_Material_cartográfico__75_mini.jpg"
         }]
     },
     {
@@ -38,21 +50,7 @@
         "description" : "Karta över Grekland",
         "link" : "https://en.wikipedia.org/wiki/Greece",
         "clickType" : "OpenCard",
-        "markers" : [{
-            "id" : "1",
-            "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
-            "link" : "/about",
-            "content" : "Sweden"
-        },
-        {
-            "id" : "2",
-            "type" : "Marker",
-            "bounds" : "{[-70, 60]}",
-            "link" : "/mapView/5",
-            "content" : "Northeast Africa"
-
-        }]
+        "markers" : []
     },
     {
         "id" : "3",
@@ -69,16 +67,30 @@
         "markers" : [{
             "id" : "1",
             "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
-            "link" : "/about",
-            "content" : "Sweden"
+            "bounds" : [[-75.2, 9], [-28, 71]],
+            "link" : "/mapView/4",
+            "content" : "",
+            "heading" : "Gottland",
+            "image" : "../../images/minimaps/1812_Gottland_Klint_mini.jpg"
         },
         {
             "id" : "2",
+            "type" : "Rectangle",
+            "bounds" : [[-78, -87], [78.2, -78]],
+            "link" : "/mapView/6",
+            "heading" : "Baltic West",
+            "content" : "",
+            "image" : "../../images/minimaps/1789_Baltic_West_mini.jpg"
+
+        },
+        {
+            "id" : "3",
             "type" : "Marker",
-            "bounds" : "{[-70, 60]}",
-            "link" : "/mapView/5",
-            "content" : "Northeast Africa"
+            "bounds" : [62, -65],
+            "link" : "/mapView/8",
+            "heading" : "Dalarö wreck, Bodekull",
+            "content" : "",
+            "image" : "../../images/minimaps/Bodekull 4k redigerad_web_mini.jpg"
 
         }]
     },
@@ -97,16 +109,11 @@
         "markers" : [{
             "id" : "1",
             "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
-            "link" : "/about",
-            "content" : "Sweden"
-        },
-        {
-            "id" : "2",
-            "type" : "Marker",
-            "bounds" : "{[-70, 60]}",
-            "link" : "/mapView/5",
-            "content" : "Northeast Africa"
+            "bounds" : [[-8.8, -41.5], [-6, -32.5]],
+            "link" : "/mapView/9",
+            "heading" : "Wisby",
+            "content" : "",
+            "image" : "../../images/minimaps/2020-01-30_20_53_43_mini.png"
 
         }]
     },
@@ -122,21 +129,7 @@
         "description" : "Karta över Nordöstra Africa",
         "link" : "https://en.wikipedia.org/wiki/Northeast_Africa",
         "clickType" : "OpenCard",
-        "markers" : [{
-            "id" : "1",
-            "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
-            "link" : "/about",
-            "content" : "Sweden"
-        },
-        {
-            "id" : "2",
-            "type" : "Marker",
-            "bounds" : "{[-70, 60]}",
-            "link" : "/mapView/5",
-            "content" : "Northeast Africa"
-
-        }]
+        "markers" : []
     },
     {
         "id" : "6",
@@ -153,17 +146,73 @@
         "markers" : [{
             "id" : "1",
             "type" : "Rectangle",
-            "bounds" : [[40, -5], [65, 15]],
-            "link" : "/about",
-            "content" : "Sweden"
+            "bounds" : [[78.2, 87], [-78.2, 79]],
+            "link" : "/mapView/3",
+            "heading" : "Baltic East",
+            "content" : "",
+            "image" : "../../images/minimaps/1789_Baltic_East_mini.jpg"
         },
         {
             "id" : "2",
             "type" : "Marker",
-            "bounds" : "{[-70, 60]}",
-            "link" : "/mapView/5",
-            "content" : "Northeast Africa"
+            "bounds" : [15, 75],
+            "link" : "/mapView/4",
+            "heading" : "Gottland",
+            "content" : "",
+            "image" : "../../images/minimaps/1812_Gottland_Klint_mini.jpg"
+
+        },
+        {
+            "id" : "3",
+            "type" : "Marker",
+            "bounds" : [26, -34],
+            "link" : "/mapView/7",
+            "heading" : "Battle of the Sound",
+            "content" : "",
+            "image" : "../../images/minimaps/1658_Sund_mini.jpg"
 
         }]
+    },
+    {
+        "id" : "7",
+        "path" : "../../maps/1658_Sund/{z}/{x}/{y}.jpg",
+        "minimap" : "../../images/minimaps/1658_Sund_mini.jpg",
+        "name" : "Battle of the Sound",
+        "startDate" : "1658",
+        "endDate" : "",
+        "area" : "Öresund",
+        "maker" : "Unknown",
+        "description" : "Drawing of the Battle of Oresund",
+        "link" : "https://en.wikipedia.org/wiki/Battle_of_the_Sound",
+        "clickType" : "OpenCard",
+        "markers" : []
+    },
+    {
+        "id" : "8",
+        "path" : "../../maps/Bodekull_4k_redigerad_web/{z}/{x}/{y}.jpg",
+        "minimap" : "../../images/minimaps/Bodekull 4k redigerad_web_mini.jpg",
+        "name" : "Bodekull wreck",
+        "startDate" : "1700",
+        "endDate" : "",
+        "area" : "Dalarö",
+        "maker" : "Project Baltacar",
+        "description" : "3D rendition of The Dalarö wreck / Bodekull",
+        "link" : "https://sketchfab.com/3d-models/the-dalaro-wreck-bodekull-9dd0c8b9f37f4ea284569ee313d81ad3",
+        "clickType" : "OpenCard",
+        "markers" : []
+    },
+    {
+        "id" : "9",
+        "path" : "../../maps/2020-01-30 20_53_43-Idea Vetustissimiæ arcis Wisburgi prope urbem Wisbyensem in Gothlandia qvalis ea/{z}/{x}/{y}.jpg",
+        "minimap" : "../../images/minimaps/2020-01-30_20_53_43_mini.png",
+        "name" : "Visby fortress",
+        "startDate" : "1679",
+        "endDate" : "",
+        "area" : "Visby",
+        "maker" : "Erik Reitz, Erik Dahlbergh",
+        "description" : "Drawing of Visby Fortress",
+        "link" : "https://en.wikipedia.org/wiki/Visby",
+        "clickType" : "OpenCard",
+        "markers" : []
     }
 ]

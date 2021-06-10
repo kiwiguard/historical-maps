@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup, Rectangle } from 'react-leaflet';
+import { Link } from 'react-router-dom';
 import './MiniMap.css';
 
 const MiniMap = () => {
@@ -13,14 +14,24 @@ const MiniMap = () => {
                         maxZoom='4'
                         continuousWorld='false'
                     />
-                    <Rectangle bounds={[[40, -5],[65, 15]]}>
+                    <Rectangle bounds={[[-71, 45], [-60, 120]]}>
                         <Popup>
-                            Sweden
+                            <h3 className='leaflet-popup-content--heading'>Northeast Africa</h3>
+                            <img src='../../images/minimaps/1584_Ptolemaei_Alexandrini_Geographiae_Libri_Octo_109_mini.jpg' alt='Minimap' className='leaflet-popup-content--image'/>
+                            <Link className='leaflet-popup-content--link' to="/mapView/5">Got to map &gt;</Link>
                         </Popup>
                     </Rectangle>
-                    <Marker position={[20, -45 ]}>
+                    <Rectangle bounds={[[-57, 28], [-30, 60]]}>
                         <Popup>
-                        British Islands.
+                            <h3 className='leaflet-popup-content--heading'>Greece</h3>
+                            <img src='../../images/minimaps/1651-1724_Material_cartográfico__75_mini.jpg' alt='Minimap' className='leaflet-popup-content--image'/>
+                            <Link className='leaflet-popup-content--link' to="/mapView/2">Got to map &gt;</Link>
+                        </Popup>
+                    </Rectangle>
+                    <Marker position={[50, 5]}>
+                        <Popup>
+                        <h3 className='leaflet-popup-content--heading'>Sweden</h3>
+                        <Link className='leaflet-popup-content--link'>Read More &gt;</Link>
                         </Popup>
                     </Marker>
                 </MapContainer>          
