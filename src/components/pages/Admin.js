@@ -5,46 +5,75 @@ import { useEffect, useState } from "react";
 const CreateMap = () => {
 
     const initialFormState = {
+        id: "",
         name: "",
         startDate: "",
         endDate: "",
         area: "",
         maker: "",
         description: "",
-        link: ""
+        link: "",
+        path: ""
     };
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState(null);    
 
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+    useEffect(() => {
+        fetch("mapModels.json")
+            .then((res) => res.json())
+            .then((data) => {                
+                console.log(data.length);
+                const id = 'id';
+                const newCount = data.length + 1;
+                setNewMap(prevMap => ({
+                    ...prevMap,
+                    [id]: newCount
+                }));
+            });
+    }, []);
 
     const [newMap, setNewMap] = useState(initialFormState)
+    
 
     const onInputChange = (event) => {
         const { name, value } = event.target;
 
         setNewMap({ ...newMap, [name]: value });
+        generateMapData();
+
+    }
+
+    const generateMapData = () => {
+        const path = 'path';
+        const minimap = 'minimap';
+
+        setNewMap(prevMap => ({
+            ...prevMap,
+            [path]: `../maps/${prevMap.name}/{z}/{x}/{y}.jpg`,
+            [minimap]: `images/minimaps/${prevMap.name}.jpg`,
+
+        }));
+        console.log(newMap);
+
     }
 
     const submitForm = () => {
         //console.log(newMap);
-        
-        fetch("api/add", {
+        generateMapData();
+
+        fetch("https://himaps.org/server/server.php", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(newMap)
         }).then((res) => res.json())
-          .then((data) => setData(data.message))
-        
+            .then((data) => {
+                setData('Map was added');
+            })
+
 
     }
-
 
 
     return (
@@ -117,8 +146,9 @@ const CreateMap = () => {
                     </Grid>
                 </Paper>
             </form>
-            <p>{!data ? "Loading..." : data}</p>
+            <p>{!data ? "" : data}</p>            
         </div>
+
     )
 }
 

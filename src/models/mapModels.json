@@ -1,7 +1,7 @@
 [
     {
         "id" : "1",
-     "path" : "../../maps/1651-1724_Material_cartográfico__34/{z}/{x}/{y}.jpg",
+     "path" : "../../maps/europe/{z}/{x}/{y}.jpg",
      "minimap" : "../../images/minimaps/1651-1724_Material_cartográfico__34_mini.jpg",
      "name" : "Europe",
      "startDate" : "1651",

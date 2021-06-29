@@ -8,8 +8,20 @@ import { Checkbox , FormControlLabel } from '@material-ui/core';
 
 
 function Search() {
-    let mapList = mapModels;    
+    //let mapList = mapModels;
+    
+    useEffect(() => {
+        fetch("mapModels.json")
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data);
+              setMapList(data);
+          });
+      }, []);
+    
+
     let mapViewItemList;
+    const [mapList, setMapList] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
     const [areaResults, setAreaResults] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
@@ -20,12 +32,14 @@ function Search() {
         const [searchTerm, setSearchTerm] = useState("");
 
         useEffect(() => {
+            if (mapList) {
             const results = mapList.filter(item =>
                 item.area.includes(searchTerm)
             );
             
             setSearchResults(results);
             setAreaResults(results);
+            }
         }, [searchTerm]);
 
         const handleChange = event => {
@@ -33,12 +47,14 @@ function Search() {
         };
 
         const uniqueItems = [];
-        // eslint-disable-next-line
+        if (mapList) { 
         mapList.map(item => {
             var existingItem = uniqueItems.find(x => x.area === item.area)
             if (!existingItem)
                 uniqueItems.push(item)
         });
+
+    }
 
         // eslint-disable-next-line
         const showData = () => {            
